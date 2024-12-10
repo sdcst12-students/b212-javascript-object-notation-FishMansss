@@ -7,3 +7,19 @@
 
 import json
 
+def larges(file):
+    largest = 0
+    filename = file
+    filer = open(filename,"r")
+    data = filer.read()
+    decoded = json.loads(data)
+    
+    for i in range(len(decoded)):
+        if decoded[i] > largest:
+            largest = decoded[i]
+    print(largest)
+    return largest
+
+larges('task01a.txt')
+larges('task01b.txt')
+larges('task01c.txt')
