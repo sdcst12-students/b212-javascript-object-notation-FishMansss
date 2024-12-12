@@ -9,8 +9,11 @@ import json
 req = requests.get('http://sdcaf.hungrybeagle.com/menu.php')
 data = req.text
 decoded = json.loads(data)
-for i in decoded['menu']:
-        print(decoded['date'])
+
+print(decoded['menu'][0])
+for i in range(len(decoded['menu'])):
+        for key, value in decoded['menu'][i].items():
+                print(f'{key}\t{value}')
       
 # Use the json encoded data that is retrieved from this website and print out the weekly menu
 # You will need to decipher the json decoded data to determine what information the 
